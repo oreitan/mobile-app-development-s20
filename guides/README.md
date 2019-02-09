@@ -1,14 +1,17 @@
 
 # Submission Rules and Guidelines
 
-All submissions and appeals regarding the exercise, must be sent to the following address: `mobile.shenkar.s19@gmail.com`
+All submissions and appeals regarding the exercise, must be sent to `mobile.shenkar.s19@gmail.com`
 <br>
 (all other channels will be ignored)
 
-For specific inquiries regarding a given exercise, please open new issue with the following title template:
+For specific inquiries regarding a given exercise, please open new issue with the following title template:<br>
 `[Ex0i]: <question_body>`
 
 Example: `[Ex01]: Can we use third party library to implement XYZ algorithm?`
+
+**Please do not tend to answer other people's questions, to make sure no one is misleading the others.
+I will answer the issues and close them. Make sure to review issues as my answers there will be applied to all of you.**
 
 ## General Guidelines
 1. Code must be written according to the Coding Standards defined by default `eslint` rules for `JavaScript`, `React` and `React-Native`.
@@ -32,11 +35,10 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
     Any late submission that was not approved in advanced will lead to 10%-100% score punishment.
 
 ## What should be submitted?
-1. The file you submit must be in the following format:
-`A14_Ex0i_FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip`
+1. The file you submit must be in the following format:<br>
+`Ex0i_FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip`
 
-    For Example, If you are submitting Ex number 1:
-`A14_Ex01_JimiHendrix_011112222_GaryNuman_033334444.zip`
+    For Example: `Ex01_JimiHendrix_011112222_GaryNuman_033334444.zip`
 2. The file must be compressed in `.zip` format.
 3. The following folders must not be included:
     * `node_modules`
@@ -49,13 +51,16 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
 4. If you followed the the previous bullets correctly, the resulted `.zip` file size should be very small (less than 2MB)
 
 ## How to submit?
-1. The zip file from the previous section, should be sent in mail to `mobile.shenkar.s19@gmail.com` with the following subject format:
+1. The zip file from the previous section, should be sent in mail to `mobile.shenkar.s19@gmail.com` with the following subject format:<br>
 `SUBMIT <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
 
-For example: `SUBMIT A14_Ex01_JimiHendrix_011112222_GaryNuman_033334444`
+For example:<br>
+`SUBMIT Ex01_JimiHendrix_011112222_GaryNuman_033334444`
+
 2. The email body must contain the following text:
 ```
-==========================Exercise Checking Report========================== Exercise No...........: <Exc No>
+==========================Exercise Checking Report========================== 
+Exercise No...........: <Exc No>
 First Student Details.: <Student Id> - <Student Name>
 Second Student Details: <Student Id> - <Student Name>
 Delivery Date.........: <Date of the exercise delivery>
@@ -66,7 +71,8 @@ Comments..............: <Comments>
 ```
 For Example:
 ```
-==========================Exercise Checking Report========================== Exercise No...........: 1
+==========================Exercise Checking Report========================== 
+Exercise No...........: 1
 First Student Details.: 011112222 - Jimi Hendrix
 Second Student Details: 033334444- Gary Numan
 Delivery Date.........: 13 - March - 2019
