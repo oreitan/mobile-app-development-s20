@@ -78,7 +78,8 @@ Second Student Details: 033334444- Gary Numan
 Delivery Date.........: 13 - March - 2019
 Delivered In Delay....: Yes (4 days)
 Delay Reason..........: Not enough time.
-Comments..............: Feature number 4 works only when running in debug mode. ========================End Exercise Checking Report========================
+Comments..............: Feature number 4 works only when running in debug mode. 
+========================End Exercise Checking Report========================
 ```
 
 ## Exercise Check & Report
