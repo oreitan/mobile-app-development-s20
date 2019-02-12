@@ -13,16 +13,18 @@ Example: `[Ex01]: Can we use third party library to implement XYZ algorithm?`
 **Please do not tend to answer other people's questions, to make sure no one is misleading the others.
 I will answer the issues and close them. Make sure to review issues as my answers there will be applied to all of you.**
 
-## General Guidelines
+## General Guidelines & Code Review Criteria
 1. Code must be written according to the Coding Standards defined by default `eslint` rules for `JavaScript`, `React` and `React-Native`.
 Make sure to install and run those plugins by following the [eslint guide](./eslint.md)
-2. Define meaningful variable and function names.
+2. Define meaningful variable and function names. Your code should be simple, clear and readable.
 3. Comments are NOT welcome. I want to read code! Use comments only to explain some odd decision or explain some hard-to-read algorithm.
 4. Do not use extra empty new-lines.
 5. Do not submit not-working/compiling code.
 6. Do not submit dead code (code block which never runs).
 7. Your code should be well indented and organized.
-8. Your code should be well design, divided to modules and functions. Properly using software engineering principles of reusability, inheritance (or mixin), polymorphism.
+8. Your code should be well design, divided to modules and functions. Properly using software engineering principles of reusability, inheritance (or mixin), composition and polymorphism.
+9. Your code should implement covered topics functionality, though enhancements are always welcome!
+
 
 ## Submission Rules
 1. Submit in pairs ***ONLY***<br>
