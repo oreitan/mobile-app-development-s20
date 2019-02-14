@@ -6,7 +6,7 @@ All submissions and appeals regarding the exercise, must be sent to `mobile.shen
 (all other channels will be ignored)
 
 For specific inquiries regarding a given exercise, please open new issue with the following title template:<br>
-`[Ex0i]: <question_body>`
+`[Ex0<num>]: <question_body>`
 
 Example: `[Ex01]: Can we use third party library to implement XYZ algorithm?`
 
@@ -34,14 +34,14 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
     * First relation medical hospitality is an exception.<br>
 
     In case you need to use one of the above exceptions, please contact me in person BEFORE the submission due date. You will not be scored until you provide proper documentation.<br>
-    Any late submission that was not approved in advanced will lead to 10%-100% score punishment.
+    Any late submission that was not approved in advanced will lead to 10%-100% score penalty.
 
 ## What should be submitted?
 1. The file you submit must be in the following format:<br>
-`Ex0i_FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip`
+`Ex0<num>_FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip`
 
     For Example: `Ex01_JimiHendrix_011112222_GaryNuman_033334444.zip`
-2. The file must be compressed in `.zip` format.
+2. The file must be compressed in `zip` format and ends with `.zip` extension.
 3. The following folders must not be included:
     * `node_modules`
     * `./ios/build`
@@ -51,41 +51,49 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
     * `./android/*.iml`
 
 4. If you followed the the previous bullets correctly, the resulted `.zip` file size should be very small (less than 2MB)
-
-## How to submit?
-1. The zip file from the previous section, should be sent in mail to `mobile.shenkar.s19@gmail.com` with the following subject format:<br>
-`SUBMIT <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
-
-For example:<br>
-`SUBMIT Ex01_JimiHendrix_011112222_GaryNuman_033334444`
-
-2. The email body must contain the following text:
-```
-==========================Exercise Checking Report========================== 
-Exercise No...........: <Exc No>
-First Student Details.: <Student Id> - <Student Name>
-Second Student Details: <Student Id> - <Student Name>
-Delivery Date.........: <Date of the exercise delivery>
-Delivered In Delay....: <Yes (X days) / No>
-Delay Reason..........: <Delay Reason>
-Comments..............: <Comments>
-=======================End Exercise Checking Report=========================
+5. In your project's `package.json` file, you must add your details in the following schema:
+```json
+"checkSubmission": {
+    "ex": Number,
+    "students": [
+        {"id": "string", "fullName": "string", "email": "string"}
+        {"id": "string", "fullName": "string", "email": "string"}
+    ],
+    "deliveryDate": "string in format MM/DD/YYYY",
+    "delay": Boolean,
+    "delayReason": "string",
+    "comments": "string"
+}
 ```
 For Example:
-```
-==========================Exercise Checking Report========================== 
-Exercise No...........: 1
-First Student Details.: 011112222 - Jimi Hendrix
-Second Student Details: 033334444- Gary Numan
-Delivery Date.........: 13 - March - 2019
-Delivered In Delay....: Yes (4 days)
-Delay Reason..........: Not enough time.
-Comments..............: Feature number 4 works only when running in debug mode. 
-========================End Exercise Checking Report========================
+```json
+"checkSubmission": {
+    "ex": "1",
+    "students": [
+      {
+        "id": "011112222",
+        "fullName": "Jimi Hendrix",
+        "email": "jimi@hendrix.com"
+      },
+      {
+        "id": "033334444",
+        "fullName": "Gary Numan",
+        "email": "gary@numan.com"
+      }
+    ],
+    "deliveryDate": "03/13/2018",
+    "delay": true,
+    "delayReason": "Not enough time.",
+    "comments": "Feature number 4 works only when running in debug mode."
+  }
 ```
 
+## How to submit?
+Moodle...
+
+
 ## Exercise Check & Report
-1. If you did not get any response to confirm your submission, please ping me.
+1. If you did not get any response to confirm your submission within 48 hours, please ping me.
 2. When checking is over, you will receive an email with the score and the check report.
 3. If you will get the source code back, you should look for my comments in the code (use `find` to look for `$Review$:`).
 4. The response email will be sent as `Reply All` to sender.
