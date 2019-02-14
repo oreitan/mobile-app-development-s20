@@ -59,7 +59,9 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
         {"id": "string", "fullName": "string", "email": "string"}
         {"id": "string", "fullName": "string", "email": "string"}
     ],
-    "deliveryDate": "string in format MM/DD/YYYY",
+    "os": "string", // one of [Mac, Linux, Windows]
+    "device": "string", // one of [Android, iOS]
+    "deliveryDate": "string", // in format MM/DD/YYYY,
     "delay": Boolean,
     "delayReason": "string",
     "comments": "string"
@@ -81,6 +83,8 @@ For Example:
         "email": "gary@numan.com"
       }
     ],
+    "os": "Mac",
+    "device": "iOS",
     "deliveryDate": "03/13/2018",
     "delay": true,
     "delayReason": "Not enough time.",
