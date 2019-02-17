@@ -52,7 +52,7 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
 
 4. If you followed the the previous bullets correctly, the resulted `.zip` file size should be very small (less than 2MB)
 5. In your project's `package.json` file, you must add your details in the following schema:
-```json
+```
 "checkSubmission": {
     "ex": Number,
     "students": [
