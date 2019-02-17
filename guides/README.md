@@ -100,13 +100,12 @@ Moodle...
 1. If you did not get any response to confirm your submission within 48 hours, please ping me.
 2. When checking is over, you will receive an email with the score and the check report.
 3. If you will get the source code back, you should look for my comments in the code (use `find` to look for `$Review$:`).
-4. The response email will be sent as `Reply All` to sender.
-5. For any kind of communication regarding your exercise submission, use the following formats:
-* For submission: `SUBMIT <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
+4. For any kind of communication regarding your exercise submission, use the following formats:
 * For inquiry: `QUESTION <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
-* For Appealing: `RECHECK <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
+* For appealing: `RECHECK <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
 
 
+<div style="color:red"><b>Note:</b><div>
+Any kind of violence of this document guidelines - will lead to score penalty.<br>
+This document might be updated from time to time - please make sure to be alighed.
 
-**Note:**
-Any kind of violence of this document guidelines - will lead to score punishment
