@@ -1,0 +1,29 @@
+{
+  "name": "mobile-course-shenkar-s19",
+  "version": "1.0.0",
+  "description": "Software Development for Mobile Devices Environment by Ziv Levy, Shenkar Engineering School, Spring 2019",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zivl/mobile-course-shenkar-s19.git"
+  },
+  "author": "Ziv Levy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zivl/mobile-course-shenkar-s19/issues"
+  },
+  "homepage": "https://github.com/zivl/mobile-course-shenkar-s19#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-react-native": "^4.0.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-native": "^3.6.0"
+  }
+}
