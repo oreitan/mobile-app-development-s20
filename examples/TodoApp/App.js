@@ -1,50 +1,93 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
-
-import React, {Component} from 'react'
-import {Platform, StyleSheet, Text, View} from 'react-native'
-
+import React, { Component } from 'react'
+import { StyleSheet, SafeAreaView, Text, FlatList, View, Button, TextInput } from 'react-native'
+import TodoListItem from './src/components/TodoListItem'
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: 'cyan'
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#F5FCFF'
+  },
+  header: {
+    backgroundColor: 'cyan',
+    padding: 10,
+    fontSize: 36,
+    textAlign: 'center'
+  },
+  list: {
+    alignContent: 'flex-start'
+  },
+  addNewSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'red'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  textInput: {
+    height: 44,
+    borderWidth: 1
+  }
 })
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-})
+const items = [{ key: 'Laundry' }, { key: 'Shopping' }, { key: 'Call lawyer' }]
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: [],
+      showAddItemInput: false,
+      addTodoText: ''
+    }
+    this.handleAddButtonClick = this.handleAddButtonClick.bind(this)
+    this.handleAddTodoSubmission = this.handleAddTodoSubmission.bind(this)
+  }
+
+  handleAddButtonClick() {
+    this.setState({ showAddItemInput: true })
+  }
+
+  handleAddTodoSubmission() {
+    this.setState({
+      showAddItemInput: false,
+      addTodoText: '',
+      items: [...this.state.items, { key: this.state.addTodoText }]
+    })
+  }
+
+  componentDidMount() {
+    this.setState({ items })
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.container}>
+          <Text style={styles.header}>My Todo App</Text>
+          <View style={styles.addNewSection}>
+            <Text>{`Todos: ${this.state.items.length}`}</Text>
+            <Button title={'Add Item'} onPress={this.handleAddButtonClick} />
+          </View>
+          {this.state.showAddItemInput && (
+            <View>
+              <TextInput
+                style={styles.textInput}
+                placeholder="Type here to translate!"
+                onChangeText={text => this.setState({ addTodoText: text })}
+                onSubmitEditing={this.handleAddTodoSubmission}
+              />
+            </View>
+          )}
+          <FlatList
+            style={styles.list}
+            data={this.state.items}
+            renderItem={({ item }) => <TodoListItem label={item.key} key={item.key} />}
+          />
+        </View>
+      </SafeAreaView>
     )
   }
 }
