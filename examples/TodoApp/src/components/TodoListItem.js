@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, TouchableOpacity, Text } from 'react-native'
 
 const styles = StyleSheet.create({
   itemWrapper: {
@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
   }
 })
 
-const TodoListItem = ({ label, isDone }) => (
-  <View style={styles.itemWrapper}>
+const TodoListItem = ({ label, isDone, onPress }) => (
+  <TouchableOpacity style={styles.itemWrapper} onPress={onPress}>
     <Text
       style={StyleSheet.flatten([
         styles.item,
@@ -24,11 +24,12 @@ const TodoListItem = ({ label, isDone }) => (
     >
       {label}
     </Text>
-  </View>
+  </TouchableOpacity>
 )
 
 TodoListItem.propTypes = {
   label: PropTypes.string,
-  isDone: PropTypes.bool
+  isDone: PropTypes.bool,
+  onPress: PropTypes.func
 }
 export default TodoListItem

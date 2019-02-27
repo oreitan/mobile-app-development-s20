@@ -32,7 +32,11 @@ const styles = StyleSheet.create({
   }
 })
 
-const items = [{ key: 'Laundry' }, { key: 'Shopping' }, { key: 'Call lawyer' }]
+const items = [
+  { key: 'Laundry', isDone: false },
+  { key: 'Shopping', isDone: true },
+  { key: 'Call lawyer', isDone: false }
+]
 
 export default class App extends Component {
   constructor(props) {
@@ -44,6 +48,13 @@ export default class App extends Component {
     }
     this.handleAddButtonClick = this.handleAddButtonClick.bind(this)
     this.handleAddTodoSubmission = this.handleAddTodoSubmission.bind(this)
+    this.toggleItemDone = this.toggleItemDone.bind(this)
+  }
+
+  toggleItemDone(item) {
+    const items = this.state.items.filter(i => i.key !== item.key)
+    const newItem = { ...item, isDone: !item.isDone }
+    this.setState({ items: [...items, newItem] })
   }
 
   handleAddButtonClick() {
@@ -84,7 +95,14 @@ export default class App extends Component {
           <FlatList
             style={styles.list}
             data={this.state.items}
-            renderItem={({ item }) => <TodoListItem label={item.key} key={item.key} />}
+            renderItem={({ item }) => (
+              <TodoListItem
+                key={item.key}
+                label={item.key}
+                isDone={item.isDone}
+                onPress={() => this.toggleItemDone(item)}
+              />
+            )}
           />
         </View>
       </SafeAreaView>
