@@ -2,10 +2,11 @@ import React, { Component, Fragment } from 'react'
 import { StyleSheet, SafeAreaView, Text, View } from 'react-native'
 import TodoList from './src/components/TodoList'
 
+const cyanColor = 'rgb(97, 149, 200)'
 const styles = StyleSheet.create({
   safeAreaTop: {
     flex: 0,
-    backgroundColor: 'rgb(97, 149, 200)'
+    backgroundColor: cyanColor
   },
   safeAreaBottom: {
     flex: 1,
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   header: {
-    backgroundColor: 'rgb(97, 149, 200)',
+    backgroundColor: cyanColor,
     padding: 10,
     fontSize: 36,
     textAlign: 'center'
