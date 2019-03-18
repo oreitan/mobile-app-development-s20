@@ -24,7 +24,7 @@ class TodoList extends Component {
     this.state = {
       items: [
         { key: 'Laundry', isDone: false },
-        { key: 'Shopping', isDone: true },
+        { key: 'Shopping', isDone: false },
         { key: 'Call lawyer', isDone: false }
       ],
       showAddItemInput: false,
@@ -43,7 +43,9 @@ class TodoList extends Component {
     this.setState({
       showAddItemInput: false,
       addTodoText: '',
-      items: [...this.state.items, { key: this.state.addTodoText }]
+      items: this.state.addTodoText
+        ? this.state.items.concat({ key: this.state.addTodoText })
+        : this.state.items
     })
   }
 
@@ -60,7 +62,7 @@ class TodoList extends Component {
           <Text>{`Todos: ${this.state.items.length}`}</Text>
           <Button title={'Add Item'} onPress={this.handleAddButtonClick} />
         </View>
-        {this.state.showAddItemInput && (
+        {this.state.showAddItemInput ? (
           <View>
             <TextInput
               style={styles.textInput}
@@ -69,6 +71,8 @@ class TodoList extends Component {
               onSubmitEditing={this.handleAddTodoSubmission}
             />
           </View>
+        ) : (
+          <View style={{ backgroundColor: 'red', height: 10 }} />
         )}
         <FlatList
           style={styles.list}
