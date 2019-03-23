@@ -62,7 +62,7 @@ class TodoList extends Component {
           <Text>{`Todos: ${this.state.items.length}`}</Text>
           <Button title={'Add Item'} onPress={this.handleAddButtonClick} />
         </View>
-        {this.state.showAddItemInput ? (
+        {this.state.showAddItemInput && (
           <View>
             <TextInput
               style={styles.textInput}
@@ -71,8 +71,6 @@ class TodoList extends Component {
               onSubmitEditing={this.handleAddTodoSubmission}
             />
           </View>
-        ) : (
-          <View style={{ backgroundColor: 'red', height: 10 }} />
         )}
         <FlatList
           style={styles.list}
