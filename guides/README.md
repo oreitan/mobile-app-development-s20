@@ -1,14 +1,11 @@
 
 # Submission Rules and Guidelines
 
-All submissions and appeals regarding the exercise, must be sent to `mobile.shenkar.s19@gmail.com`
+All appeals regarding the exercise, must be sent to `mobile.shenkar.s19@gmail.com`
 <br>
 (all other channels will be ignored)
 
-For specific inquiries regarding a given exercise, please open new issue with the following title template:<br>
-`[Ex0<num>]: <question_body>`
-
-Example: `[Ex01]: Can we use third party library to implement XYZ algorithm?`
+For specific inquiries regarding a given exercise, please use the *Moodle* system to write a post in a dedicated forum for that exercise.
 
 **Please do not tend to answer other people's questions, to make sure no one is misleading the others.
 I will answer the issues and close them. Make sure to review issues as my answers there will be applied to all of you.**

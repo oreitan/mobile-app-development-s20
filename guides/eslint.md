@@ -7,44 +7,10 @@ ESLint is an open source project originally created by [Nicholas C. Zakas](http:
 ## Setup in your projects
 1. run the following command to install relevant eslint modules:
 ```
-npm install --save-dev eslint eslint-plugin-react eslint-config-react eslint-plugin-react-native eslint-config-react-native
+npm install --save-dev eslint eslint-plugin-react eslint-config-react eslint-plugin-react-native eslint-config-react-native prettier eslint-plugin-prettier eslint-config-prettier
 ```
 2. create a `.eslintrc` file as follows
-```json
-{
-    "env": {
-        "react-native/react-native": true
-      },
-      "parserOptions": {
-        "ecmaFeatures": {
-          "jsx": true
-        }
-      },
-      "plugins": ["react", "react-native"],
-      "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "react-native"
-      ],
-      "rules": {
-        "semi": ["error", "never"],
-        "quotes": ["error", "single"],
-        "react/prefer-stateless-function": 0,
-        "class-methods-use-this": 0,
-        "react-native/no-color-literals": 0,
-        "import/no-commonjs": 0,
-        "import/no-nodejs-modules": 0
-      },
-      "settings": {
-        "react": {
-          "version": "detect"
-        }
-      },
-      "globals": {
-        "it": true
-      }
-}
-```
+[You may copy the one in this repository's root](https://raw.githubusercontent.com/zivl/mobile-course-shenkar-s19/master/README.md)
 
 3. run `eslint` from the command line to make sure everything works well.
 ```
