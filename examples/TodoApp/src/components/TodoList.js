@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { StyleSheet, View, Text, Button, FlatList, TextInput } from 'react-native'
 import TodoListItem from './TodoListItem'
+import actions from './todoActions'
 
 const styles = StyleSheet.create({
   list: {
@@ -18,69 +21,55 @@ const styles = StyleSheet.create({
   }
 })
 
+const mapStateToProps = ({ todo, user }) => {
+  return {
+    items: todo.items,
+    showAddItemInput: todo.showAddItemInput,
+    addTodoText: todo.addTodoText,
+    userName: user.name
+  }
+}
+
 class TodoList extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      items: [
-        { key: 'Laundry', isDone: false },
-        { key: 'Shopping', isDone: false },
-        { key: 'Call lawyer', isDone: false }
-      ],
-      showAddItemInput: false,
-      addTodoText: ''
-    }
-    this.toggleItemDone = this.toggleItemDone.bind(this)
-    this.handleAddButtonClick = this.handleAddButtonClick.bind(this)
-    this.handleAddTodoSubmission = this.handleAddTodoSubmission.bind(this)
-  }
-
-  handleAddButtonClick() {
-    this.setState({ showAddItemInput: true })
-  }
-
-  handleAddTodoSubmission() {
-    this.setState({
-      showAddItemInput: false,
-      addTodoText: '',
-      items: this.state.addTodoText
-        ? this.state.items.concat({ key: this.state.addTodoText })
-        : this.state.items
-    })
-  }
-
-  toggleItemDone(item) {
-    const items = this.state.items.filter(i => i.key !== item.key)
-    const newItem = { ...item, isDone: !item.isDone }
-    this.setState({ items: [...items, newItem] })
+  state = {
+    addTodoText: ''
   }
 
   render() {
+    const {
+      items,
+      showAddItemInput,
+      userName,
+      handleAddButtonClick,
+      handleAddTodoSubmission,
+      toggleItemDone
+    } = this.props
+
     return (
       <View>
         <View style={styles.addNewSection}>
-          <Text>{`Todos: ${this.state.items.length}`}</Text>
-          <Button title={'Add Item'} onPress={this.handleAddButtonClick} />
+          <Text>{`Hi ${userName}! Todos: ${items.length}`}</Text>
+          <Button title={'Add Item'} onPress={handleAddButtonClick} />
         </View>
-        {this.state.showAddItemInput && (
+        {showAddItemInput && (
           <View>
             <TextInput
               style={styles.textInput}
               placeholder="Type here to translate!"
               onChangeText={text => this.setState({ addTodoText: text })}
-              onSubmitEditing={this.handleAddTodoSubmission}
+              onSubmitEditing={() => handleAddTodoSubmission(this.state.addTodoText)}
             />
           </View>
         )}
         <FlatList
           style={styles.list}
-          data={this.state.items}
+          data={items}
           renderItem={({ item }) => (
             <TodoListItem
               key={item.key}
               label={item.key}
               isDone={item.isDone}
-              onPress={() => this.toggleItemDone(item)}
+              onPress={() => toggleItemDone(item)}
             />
           )}
         />
@@ -89,4 +78,16 @@ class TodoList extends Component {
   }
 }
 
-export default TodoList
+TodoList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({ key: PropTypes.string, isDone: PropTypes.bool })),
+  showAddItemInput: PropTypes.bool,
+  userName: PropTypes.string,
+  handleAddButtonClick: PropTypes.func,
+  toggleItemDone: PropTypes.func,
+  handleAddTodoSubmission: PropTypes.func
+}
+
+export default connect(
+  mapStateToProps,
+  actions
+)(TodoList)
