@@ -40,6 +40,7 @@
         "react/jsx-closing-tag-location": 2,
         "react-native/no-color-literals": 0,
         "import/no-commonjs": 0,
-        "import/no-nodejs-modules": 0
+        "import/no-nodejs-modules": 0,
+        "import/no-unresolved": 0
       }
 }
