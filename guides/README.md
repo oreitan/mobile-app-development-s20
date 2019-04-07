@@ -7,8 +7,8 @@ All appeals regarding the exercise, must be sent to `mobile.shenkar.s19@gmail.co
 
 For specific inquiries regarding a given exercise, please use the *Moodle* system to write a post in a dedicated forum for that exercise.
 
-**Please do not tend to answer other people's questions, to make sure no one is misleading the others.
-I will answer the issues and close them. Make sure to review issues as my answers there will be applied to all of you.**
+**Please do not tend to answer other people's questions, to make sure no one is misleading the others. I will answer the issues.
+Make sure to review issues as my answers there will be applied to all of you.**
 
 ## General Guidelines & Code Review Criteria
 1. Code must be written according to the Coding Standards defined by default `eslint` rules for `JavaScript`, `React` and `React-Native`.
@@ -35,20 +35,40 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
 
 ## What should be submitted?
 1. The file you submit must be in the following format:<br>
-`Ex0<num>_FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip`
+`FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip`
 
-    For Example: `Ex01_JimiHendrix_011112222_GaryNuman_033334444.zip`
-2. The file must be compressed in `zip` format and ends with `.zip` extension.
-3. The following folders must not be included:
+    For Example: `JimiHendrix_011112222_GaryNuman_033334444.zip`
+2. Inside the zip file, there should be only one folder which is the project itself and must have the exact same name as above.
+
+    For Example:
+    ```
+    JimiHendrix_011112222_GaryNuman_033334444.zip
+    |
+    |
+    ---> JimiHendrix_011112222_GaryNuman_033334444
+          |
+          |
+          ---> src/
+          ---> index.js
+          ---> package.json
+          ---> .eslintrc
+          ---> ...
+          ---> ...
+    ```
+3. The file must be compressed in `zip` format and ends with `.zip` extension.
+4. The following folders must not be included:
     * `node_modules`
+    * `.vscode`
+    * `.idea`
+    * `.expo`
     * `./ios/build`
     * `./android/build`
     * `./android/.idea`
     * `./android/.gradle`
     * `./android/*.iml`
 
-4. If you followed the the previous bullets correctly, the resulted `.zip` file size should be very small (less than 2MB)
-5. In your project's `package.json` file, you must add your details in the following schema:
+5. If you followed the the previous bullets correctly, the resulted `.zip` file size should be very small (less than 2MB)
+6. In your project's `package.json` file, you must add your details in the following schema:
 ```
 "checkSubmission": {
     "ex": Number,
@@ -60,8 +80,8 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
     "device": "string", // one of [Android, iOS]
     "deliveryDate": "string", // in format MM/DD/YYYY,
     "delay": Boolean,
-    "delayReason": "string",
-    "comments": "string"
+    "delayReason": "string", // optional
+    "comments": "string" // optional
 }
 ```
 For Example:
@@ -95,14 +115,10 @@ Moodle...
 
 ## Exercise Check & Report
 1. If you did not get any response to confirm your submission within 48 hours, please ping me.
-2. When checking is over, you will receive an email with the score and the check report.
+2. When checking is over, you will receive a the score and the check report in moodle.
 3. If you will get the source code back, you should look for my comments in the code (use `find` to look for `$Review$:`).
-4. For any kind of communication regarding your exercise submission, use the following formats:
-* For inquiry: `QUESTION <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
-* For appealing: `RECHECK <zip_filename_format_as_mentioned_above_WITHOUT_ZIP_EXTENSION>`
 
 
 <div style="color:red"><b>Note:</b><div>
 Any kind of violence of this document guidelines - will lead to score penalty.<br>
-This document might be updated from time to time - please make sure to be alighed.
-
+This document might be updated from time to time - please make sure to be aligned.
