@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { StyleSheet, SafeAreaView, Text, View } from 'react-native'
-import TodoList from './src/components/TodoList'
+import TodoList from './src/components/Todo/TodoList'
 
 const cyanColor = 'rgb(97, 149, 200)'
 const styles = StyleSheet.create({

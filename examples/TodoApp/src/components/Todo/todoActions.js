@@ -6,12 +6,20 @@ const setInputVisibility = isVisible => ({ type: SET_INPUT_VISIBILITY, data: isV
 
 const handleAddButtonClick = () => setInputVisibility(true)
 
-const handleAddTodoSubmission = itemText => dispatch => {
+const handleAddTodoSubmission = itemText => async dispatch => {
   dispatch(setInputVisibility(false))
+  await getSomething()
   dispatch(addItem(itemText))
 }
 
+function a(itemText) {
+  return function b(dispatch) {}
+}
 const toggleItemDone = item => ({ type: TOGGLE_ITEM, data: { item } })
+
+function c(item) {
+  return { type: TOGGLE_ITEM, data: { item } }
+}
 
 export default {
   handleAddButtonClick,
