@@ -30,7 +30,7 @@ const mapStateToProps = ({ todo, user }) => {
   }
 }
 
-class TodoList extends Component {
+export class TodoList extends Component {
   state = {
     addTodoText: ''
   }
