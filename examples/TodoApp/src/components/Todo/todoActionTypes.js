@@ -1,4 +1,3 @@
-export const ITEMS_LOADED = 'ITEMS_LOADED'
 export const ADD_ITEM = 'ADD_ITEM'
 export const SET_INPUT_VISIBILITY = 'SET_INPUT_VISIBILITY'
 export const TOGGLE_ITEM = 'TOGGLE_ITEM'

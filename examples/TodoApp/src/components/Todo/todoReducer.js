@@ -1,21 +1,12 @@
-import { ITEMS_LOADED, ADD_ITEM, SET_INPUT_VISIBILITY, TOGGLE_ITEM } from './todoActionTypes'
+import { ADD_ITEM, SET_INPUT_VISIBILITY, TOGGLE_ITEM } from './todoActionTypes'
 
 const initialState = {
-  items: [
-    { key: 'Laundry', isDone: false },
-    { key: 'Shopping', isDone: false },
-    { key: 'Call lawyer', isDone: false }
-  ],
+  items: [],
   showAddItemInput: false
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ITEMS_LOADED:
-      return {
-        ...state,
-        items: action.data
-      }
     case ADD_ITEM:
       return {
         ...state,
