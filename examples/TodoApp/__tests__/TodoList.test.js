@@ -1,4 +1,4 @@
-import 'react-native'
+import { TextInput } from 'react-native'
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { TodoList } from '../src/components/Todo/TodoList'
@@ -46,5 +46,22 @@ describe('TodoList tests', function() {
 
     expect(onToggle).toHaveBeenCalledTimes(1)
     expect(onToggle).toHaveBeenCalledWith({ key: todoItemComponent.props.label, isDone: false })
+  })
+
+  test('calls action on add todo item press', function() {
+    const onAddItem = jest.fn()
+    const testRenderer = renderer.create(<TodoList items={[]} handleAddButtonClick={onAddItem} />)
+    testRenderer.root.props.handleAddButtonClick()
+    expect(onAddItem).toHaveBeenCalledTimes(1)
+  })
+
+  test('should not show input text field if showAddItemInput=false', function() {
+    const testRenderer = renderer.create(<TodoList items={[]} showAddItemInput={false} />)
+    expect(testRenderer.root.findAllByType(TextInput)).toEqual([])
+  })
+
+  test('should not show input text field if showAddItemInput=true', function() {
+    const testRenderer = renderer.create(<TodoList items={[]} showAddItemInput />)
+    expect(testRenderer.root.findByType(TextInput)).toBeDefined()
   })
 })
