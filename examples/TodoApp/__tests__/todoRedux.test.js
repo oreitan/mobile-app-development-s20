@@ -15,4 +15,50 @@ describe('todo redux e2e functionality', function() {
 
     expect(store.getState().todo).toHaveProperty('items', [{ key: 'bla bla bla', isDone: false }])
   })
+
+  test('toggle todo item', function() {
+    const store = createStore(
+      rootReducer,
+      {
+        ...initialState,
+        todo: {
+          items: [
+            {
+              isDone: false,
+              key: 'todo1'
+            },
+            {
+              isDone: false,
+              key: 'todo2'
+            }
+          ],
+          showAddItemInput: false
+        }
+      },
+      composedEnhancers
+    )
+    store.dispatch(todoActions.toggleItemDone({ key: 'todo1' }))
+    expect(store.getState().todo).toEqual({
+      items: [
+        {
+          isDone: false,
+          key: 'todo2'
+        },
+        {
+          isDone: true,
+          key: 'todo1'
+        }
+      ],
+      showAddItemInput: false
+    })
+  })
+
+  test('add button click todo item', function() {
+    const store = createStore(rootReducer, initialState, composedEnhancers)
+    store.dispatch(todoActions.handleAddButtonClick())
+    expect(store.getState().todo).toEqual({
+      items: [],
+      showAddItemInput: true
+    })
+  })
 })
