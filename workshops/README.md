@@ -42,4 +42,4 @@ Bonus: build 3-axes graph with the 3 directions values
 
 
 ## 🏅🏅🏅 Submitter Bonus 🏅🏅🏅
-#### Up to 15 points to final grade!
+#### Up to 15 points to final exercise!
