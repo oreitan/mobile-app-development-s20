@@ -1,37 +1,34 @@
 
 # Submission Rules and Guidelines
 
-All appeals regarding the exercise, must be sent to `mobile.shenkar.s19@gmail.com`
-<br>
-(all other channels will be ignored)
+For specific inquiries regarding a given exercise, please post on the *relevant Slack channel*  for that exercise.
 
-For specific inquiries regarding a given exercise, please use the *Moodle* system to write a post in a dedicated forum for that exercise.
-
-**Please do not tend to answer other people's questions, to make sure no one is misleading the others. I will answer the issues.
+> **Please do not tend to answer other people's inquiries, to make sure no one is misleading the others. I will answer the exercise inquiries.
 Make sure to review issues as my answers there will be applied to all of you.**
+
 
 ## General Guidelines & Code Review Criteria
 1. Code must be written according to the Coding Standards defined by default `eslint` rules for `JavaScript`, `React` and `React-Native`.
 Make sure to install and run those plugins by following the [eslint guide](./eslint.md)
 2. Define meaningful variable and function names. Your code should be simple, clear and readable.
-3. Comments are NOT welcome. I want to read code! Use comments only to explain some odd decision or explain some hard-to-read algorithm.
+3. Comments are **NOT** welcome. I want to read code! Use comments only to explain some odd decision or explain some hard-to-read algorithm.
 4. Do not use extra empty new-lines.
 5. Do not submit not-working/compiling code.
 6. Do not submit dead code (code block which never runs).
 7. Your code should be well indented and organized.
-8. Your code should be well design, divided to modules and functions. Properly using software engineering principles of reusability, inheritance (or mixin), composition and polymorphism.
+8. Your code should be well design, divided to modules and functions. Properly using software engineering principles of reusability, inheritance (or mixin), composition.
 9. Your code should implement covered topics functionality, though enhancements are always welcome!
 
 
 ## Submission Rules
-1. Submit in pairs ***ONLY***<br>
-(No, I don't care if you're a gang since the kindergarden)
-2. You MUST submit on time!
+1. Submission is **SOLO**<br>
+(No, I don't care if you're a gang since the kindergarten)
+2. Submit **On Time!**
     * MILUIM is an exception, if you provide a "release from service" (מכתב שחרור) note.
     * First relation medical hospitality is an exception.<br>
 
     In case you need to use one of the above exceptions, please contact me in person BEFORE the submission due date. You will not be scored until you provide proper documentation.<br>
-    Any late submission that was not approved in advanced will lead to 10%-100% score penalty.
+    > Delays that was not approved in advanced will lead to 10%-100% score penalty.
 
 ## What should be submitted?
 1. The file you submit must be in the following format:<br>
@@ -56,7 +53,7 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
           ---> ...
     ```
 3. The file must be compressed in `zip` format and ends with `.zip` extension.
-4. The following folders must not be included:
+4. The following folders must be **excluded**:
     * `node_modules`
     * `.vscode`
     * `.idea`
@@ -89,16 +86,8 @@ For Example:
 "checkSubmission": {
     "ex": "1",
     "students": [
-      {
-        "id": "011112222",
-        "fullName": "Jimi Hendrix",
-        "email": "jimi@hendrix.com"
-      },
-      {
-        "id": "033334444",
-        "fullName": "Gary Numan",
-        "email": "gary@numan.com"
-      }
+      { "id": "011112222", "fullName": "Jimi Hendrix", "email": "jimi@hendrix.com" },
+      { "id": "033334444", "fullName": "Gary Numan", "email": "gary@numan.com" }
     ],
     "os": "Mac",
     "device": "iOS",
@@ -114,11 +103,10 @@ Moodle...
 
 
 ## Exercise Check & Report
-1. If you did not get any response to confirm your submission within 48 hours, please ping me.
-2. When checking is over, you will receive a the score and the check report in moodle.
-3. If you will get the source code back, you should look for my comments in the code (use `find` to look for `$Review$:`).
+* When checking is over, you will receive a the score and the check report in moodle.
+* If you will get the source code back, you should look for my comments in the code (use `find` to look for `$Review$:`).
+* All appeals regarding the exercise, must be sent to `levi.ziv@gmail.com` (all other channels will be ignored)
 
 
-<div style="color:red"><b>Note:</b><div>
-Any kind of violence of this document guidelines - will lead to score penalty.<br>
-This document might be updated from time to time - please make sure to be aligned.
+> Any kind of violence of this document guidelines - will lead to score penalty.<br>
+This document might be updated from time to time - please make sure to be aligned each submission.
