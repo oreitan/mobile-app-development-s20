@@ -1,7 +1,7 @@
 {
-  "name": "mobile-course-shenkar-s19",
+  "name": "mobile-app-development-s20",
   "version": "1.0.0",
-  "description": "Software Development for Mobile Devices Environment by Ziv Levy, Shenkar Engineering School, Spring 2019",
+  "description": "Mobile Application Development by Ziv Levy, Shenkar Engineering School, Spring 2020",
   "main": "index.js",
   "directories": {
     "example": "examples"
@@ -11,23 +11,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zivl/mobile-course-shenkar-s19.git"
+    "url": "git+https://github.com/zivl/mobile-app-development-s20.git"
   },
   "author": "Ziv Levy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zivl/mobile-course-shenkar-s19/issues"
+    "url": "https://github.com/zivl/mobile-app-development-s20/issues"
   },
-  "homepage": "https://github.com/zivl/mobile-course-shenkar-s19#readme",
+  "homepage": "https://github.com/zivl/mobile-app-development-s20#readme",
   "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-prettier": "^4.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-config-react": "^1.1.7",
     "eslint-config-react-native": "^4.0.0",
-    "eslint-plugin-jest": "^22.4.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-native": "^3.6.0",
-    "prettier": "1.16.4"
+    "eslint-plugin-jest": "^23.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-native": "^3.8.1",
+    "prettier": "^1.19.1"
   }
 }
