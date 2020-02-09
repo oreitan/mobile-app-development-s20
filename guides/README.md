@@ -75,7 +75,7 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
     ],
     "os": "string", // one of [Mac, Linux, Windows]
     "device": "string", // one of [Android, iOS]
-    "deliveryDate": "string", // in format MM/DD/YYYY,
+    "submissionDate": "string", // in format DD/MM/YYYY,
     "delay": Boolean,
     "delayReason": "string", // optional
     "comments": "string" // optional
@@ -91,7 +91,7 @@ For Example:
     ],
     "os": "Mac",
     "device": "iOS",
-    "deliveryDate": "03/13/2018",
+    "submissionDate": "25/03/2020",
     "delay": true,
     "delayReason": "Not enough time.",
     "comments": "Feature number 4 works only when running in debug mode."
