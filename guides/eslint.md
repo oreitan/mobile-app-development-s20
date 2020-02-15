@@ -7,7 +7,7 @@ In  this course, we will be using the great `eslint` linter. Code linting is one
 ## Setup in your projects
 1. run the following command to install relevant eslint modules:
 ```
-npm install --save-dev eslint eslint-plugin-react eslint-config-react eslint-plugin-react-native eslint-config-react-native prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-jest
+npm install --save-dev eslint eslint-plugin-react eslint-config-react eslint-plugin-react-native eslint-config-react-native prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-jest eslint-plugin-import
 ```
 2. create a `.eslintrc` file as follows
 [You may copy the one in this repository's root](https://raw.githubusercontent.com/zivl/mobile-app-development-s20/master/.eslintrc)
