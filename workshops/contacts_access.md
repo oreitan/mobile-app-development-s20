@@ -15,7 +15,7 @@ Let's setup ESLint using [this guide](../guides/eslint.md)
 Add search text field box. Place it on top of the screen, below the screen header
 
 ## Step 4
-Add activity indicator to show the user we're on loading state until the contacts are retrieved from the device.
+Add [Activity Indicator](https://reactnative.dev/docs/activityindicator) to show the user we're on loading state until the contacts are retrieved from the device.
 The loading indicator will be shown as long as the loading being done. Once loading is finished, it will not be shown anymore.
 
 ## Step 5
