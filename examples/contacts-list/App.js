@@ -1,19 +1,38 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, SafeAreaView, ActivityIndicator } from 'react-native'
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  SafeAreaView,
+  ActivityIndicator,
+  FlatList
+} from 'react-native'
+import * as Contacts from 'expo-contacts'
+import ContactItem from './components/ContactItem'
 
 export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      isLoading: true
+      isLoading: true,
+      contacts: []
     }
   }
-  componentDidMount() {
-    // loadContacts...
+
+  async componentDidMount() {
+    const { status } = await Contacts.requestPermissionsAsync()
+    if (status === 'granted') {
+      const { data } = await Contacts.getContactsAsync({
+        fields: [Contacts.Fields.Name, Contacts.Fields.PhoneNumbers]
+      })
+      this.setState({ isLoading: false, contacts: data })
+    } else {
+      console.log('no permissions')
+    }
   }
 
   render() {
-    const { isLoading } = this.state
+    const { isLoading, contacts } = this.state
     return (
       <View style={styles.container}>
         <SafeAreaView style={styles.safeArea} />
@@ -23,7 +42,18 @@ export default class App extends React.Component {
             <View styles={styles.indicator}>
               <ActivityIndicator size={'large'} color={'#2fcccc'} />
             </View>
-          ) : null}
+          ) : (
+            <FlatList
+              data={contacts}
+              renderItem={({ item }) => (
+                <ContactItem
+                  name={item.name}
+                  number={item.phoneNumbers ? item.phoneNumbers[0].number : ''}
+                />
+              )}
+              keyExtractor={item => item.id}
+            />
+          )}
         </View>
       </View>
     )
@@ -35,8 +65,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   content: {
-    flex: 1,
-    backgroundColor: 'red'
+    flex: 1
+    // backgroundColor: 'red'
   },
   safeArea: {
     backgroundColor: '#2f363c'
