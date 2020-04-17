@@ -22,6 +22,6 @@ For your convenient, feel free to add a `lint` script in your `scripts` section 
 for example
 ```json
 "scripts": {
-    "lint": "eslint --cache --format codeframe --ext .js ."
+    "lint": "eslint --cache --fix --format codeframe --ext .js ."
 }
 ```
