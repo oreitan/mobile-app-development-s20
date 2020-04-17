@@ -32,7 +32,8 @@ Make sure to install and run those plugins by following the [eslint guide](./esl
 
 ## What should be submitted?
 1. The file you submit must be in the following format:<br>
-`FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip`
+`FirstStudentFullName_<studentId>.zip` -- SOLO submission
+`FirstStudentFullName_<studentId>_SecondStudentFullName_<studentId>.zip` -- in pairs
 
     For Example: `JimiHendrix_011112222_GaryNuman_033334444.zip`
 2. Inside the zip file, there should be only one folder which is the project itself and must have the exact same name as above.
