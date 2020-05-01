@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
-import contactsReducer from './components/contactsReducer'
+import contactsReducer from './components/Contacts/contactsReducer'
+import userReducer from './components/User/userReducer'
 
 export default combineReducers({
   contacts: contactsReducer,
-  user: () => ({ name: 'Ziv', email: 'ziv@levy.com' })
+  user: userReducer
 })
