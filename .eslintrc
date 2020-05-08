@@ -29,7 +29,7 @@
           "error",
           {
             "printWidth": 100,
-            "semi": false,
+            "semi": true,
             "singleQuote": true,
             "trailingComma": "none"
           }
