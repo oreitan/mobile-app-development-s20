@@ -1,26 +1,31 @@
 import React from 'react';
 import { arrayOf, string, bool, shape, func } from 'prop-types';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
-import TodoList from './components/TodoList';
+import TodoList from './components/Todo/TodoList';
 import { connect } from 'react-redux';
-import AddItem from './components/AddItem';
-import * as actions from './components/todoActions';
+import AddItem from './components/AddItem/AddItem';
+import * as actions from './components/Todo/todoActions';
+import Visibility from './components/Visibility/Visibility';
+import { getVisibleTodos } from './utils/utilities';
 
-const mapStateToProps = ({ todo }) => {
+const mapStateToProps = ({ todo, visibility }) => {
   return {
-    items: todo.list
+    items: getVisibleTodos(todo.list, visibility.filter)
   };
 };
 
-const TodoApp = ({ items, addItem }) => {
+const TodoApp = ({ items, addItem, toggleItem }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea} />
       <AddItem onAddPressed={addItem} />
-      <TodoList items={items} />
+      <TodoList items={items} onToggleItem={toggleItem} />
+      <Visibility />
     </View>
   );
 };
+
+const ConnectedTodoApp = connect(mapStateToProps, actions)(TodoApp);
 
 const styles = StyleSheet.create({
   container: {
@@ -40,9 +45,8 @@ TodoApp.propTypes = {
       isDone: bool
     })
   ),
-  addItem: func
+  addItem: func,
+  toggleItem: func
 };
-
-const ConnectedTodoApp = connect(mapStateToProps, actions)(TodoApp);
 
 export default ConnectedTodoApp;

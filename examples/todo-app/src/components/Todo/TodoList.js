@@ -1,20 +1,16 @@
 import React from 'react';
-import { arrayOf, string, bool, shape } from 'prop-types';
+import { arrayOf, string, bool, shape, func } from 'prop-types';
 import { FlatList, View, Text } from 'react-native';
+import TodoItem from './TodoItem';
 
-const TodoList = ({ items }) => {
-  console.log({ items });
+const TodoList = ({ items, onToggleItem }) => {
   return (
     <FlatList
       keyExtractor={item => item.id}
       data={items}
-      renderItem={({ item }) => {
-        return (
-          <View>
-            <Text>{item.text}</Text>
-          </View>
-        );
-      }}
+      renderItem={({ item }) => (
+        <TodoItem text={item.text} isDone={item.isDone} onPress={() => onToggleItem(item.id)} />
+      )}
       ListEmptyComponent={() => (
         <View>
           <Text>no items</Text>
@@ -31,7 +27,8 @@ TodoList.propTypes = {
       text: string,
       isDone: bool
     })
-  )
+  ),
+  onToggleItem: func
 };
 
 export default TodoList;
